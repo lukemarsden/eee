@@ -1,0 +1,13 @@
+apiVersion: serving.kserve.io/v1beta1
+kind: InferenceService
+metadata:
+  name: eee-sk-learn-random-forest-reg
+  namespace: helix-eee
+spec:
+  predictor:
+    model:
+      modelFormat:
+        name: sklearn
+      runtime: kserve-mlserver
+      storageUri: s3://e723bb30-d001-4532-afd6-edb69ddf4240/0/59b4f7a3735047ca95949cdd09b58610/artifacts/model
+    serviceAccountName: eee-sk-learn-random-forest-reg
